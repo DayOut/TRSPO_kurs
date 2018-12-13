@@ -7,7 +7,8 @@ void swap(int &a, int &b) {
 }
 
 void selectionSort(int* A, int n) {
-
+	std::cout << "Started selectionSort \n";
+	int comparisons = 0;
 	for (int j = 0; j < n - 1; j++) {
 		int smallest = j;
 
@@ -15,6 +16,7 @@ void selectionSort(int* A, int n) {
 		// If value at index i is less that value at index j/smallest, swap the
 		// two with each other
 		for (int i = j + 1; i < n; i++) {
+			std::cout << "\r" <<comparisons++;
 			if (A[i] < A[smallest]) {
 				smallest = i;
 			}

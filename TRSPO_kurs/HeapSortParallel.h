@@ -33,6 +33,7 @@ void heapify(T *a, const int size, int i)
 template<typename T>
 void heapSortParallel(T *a, const int size)
 {
+	std::cout << "Started head sort\n";
 	int i = 0;
 	double start = omp_get_wtime();
 

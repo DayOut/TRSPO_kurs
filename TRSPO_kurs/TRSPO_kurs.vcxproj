@@ -157,6 +157,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="QS.h" />
     <ClInclude Include="QSInterface.h" />
+    <ClInclude Include="SelectionSort.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>

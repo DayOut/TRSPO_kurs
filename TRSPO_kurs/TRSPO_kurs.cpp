@@ -13,34 +13,35 @@
 #include "HeapSortParallel.h"
 #include "Utilities.h"
 #include "QS.h"
+#include "SelectionSort.h"
 
 #define LIM 1001313
 
 
 int main()
 {
-	std::cout << "Enter n (array size) and m (amount of sequences): ";
-	unsigned int n = 0;
-	std::cin >> n;
-	int *solo, *paral;
-	solo = new int[n];
-	paral = new int[n];
-	int * sec = new int[n];
-	QS quick;
-	quick.createArray(n);
+	std::cout << "Enter n (array size): ";
+	unsigned int size = 0;
+	std::cin >> size; // size of array
+	int *selectSort, *heapSortP;
+	selectSort = new int[size];
+	heapSortP = new int[size];
+	QS quickSort;
+	quickSort.createArray(size);
 
 
-	fillRandomly(solo, paral, quick, n);
-	print(solo, paral, quick, n);
+	fillRandomly(selectSort, heapSortP, quickSort, size);
+	print(selectSort, heapSortP, quickSort, size);
 	/*std::cout << quick.getArrElem(0);
 	std::cout << quick.getArrElem(2);*/
-	heapSort(solo, n); // вызов функции сортировки
-	heapSortParallel(paral, n);
-	quick.sortAll();
-	print(solo, paral, quick, n);
+	//heapSort(solo, n); // вызов функции сортировки
+	selectionSort(selectSort, size);
+	heapSortParallel(heapSortP, size);
+	quickSort.sortAll();
+	print(selectSort, heapSortP, quickSort, size);
 	system("pause");
-	delete solo;
-	delete paral;
+	delete selectSort;
+	delete heapSortP;
 
 	return 0;
 }

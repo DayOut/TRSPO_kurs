@@ -20,7 +20,7 @@ template<typename T>
 void print(T data, T data2, QS data3, const int size)
 {
 	
-	if (size <= 100) 
+	if (size <= 100) // если имеет смысл выводить содержимое массива
 	{
 		std::cout << "Before sort: \n\tSolo: \n\t";
 		for (size_t i = 0; i < size; i++)
@@ -42,6 +42,13 @@ void print(T data, T data2, QS data3, const int size)
 	}
 }
 
+
+void sortInfo(string str, double start, double end, int size)
+{
+	std::cout << "Sorting algorytm: " << str << std::endl; 
+	std::cout << "Numbers sorted: " << size << "\n";
+	std::cout << std::fixed << "Time: " << (end - start) << "\n";
+}
 //template for printing all arrays
 //template<typename T>
 //void printAll(T data, ...)

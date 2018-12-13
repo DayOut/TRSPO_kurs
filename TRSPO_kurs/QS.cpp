@@ -35,9 +35,11 @@ void QS::sortAll() {
 		;
 	}
 	else {
+		std::cout << "started quick sort\n";
 		double start = omp_get_wtime();
 		recSort(0, size - 1);
 		double end = omp_get_wtime();
+
 		std::cout << "Numbers sorted: " << capacity << "\n";
 		std::cout << std::fixed << "Time: " << (end - start) << "\n";
 	}
