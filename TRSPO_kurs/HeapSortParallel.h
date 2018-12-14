@@ -33,17 +33,17 @@ void heapify(T *a, const int size, int i)
 template<typename T>
 void heapSortParallel(T *a, const int size)
 {
-	std::cout << "Started head sort\n";
+	std::cout << "Started heapSort\n";
 	int i = 0;
 	double start = omp_get_wtime();
 
-#pragma omp parallel for shared(a, size) num_threads(1)
+#pragma omp parallel for shared(a, size) num_threads(4)
 	for (i = size / 2 - 1; i >= 0; i--)
 		//Building heap.
 	{
 		heapify(a, size, i);
 	}
-#pragma omp parallel for private (i) shared(a, size) num_threads(1)
+#pragma omp parallel for private (i) shared(a, size) num_threads(4)
 	for (i = size - 1; i >= 0; i--)
 		//Extract elements 1 by 1 from heap.
 	{

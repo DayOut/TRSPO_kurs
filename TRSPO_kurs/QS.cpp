@@ -1,10 +1,3 @@
-/*
- * QS.cpp
- *
- *  Created on: Apr 1, 2015
- *      Author: bryce14
- */
-
 #include "QS.h"
 #include <array>
 

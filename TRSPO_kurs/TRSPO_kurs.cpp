@@ -35,9 +35,10 @@ int main()
 	/*std::cout << quick.getArrElem(0);
 	std::cout << quick.getArrElem(2);*/
 	//heapSort(solo, n); // вызов функции сортировки
-	selectionSort(selectSort, size);
+	//
 	heapSortParallel(heapSortP, size);
 	quickSort.sortAll();
+	//selectionSort(selectSort, size);
 	print(selectSort, heapSortP, quickSort, size);
 	system("pause");
 	delete selectSort;

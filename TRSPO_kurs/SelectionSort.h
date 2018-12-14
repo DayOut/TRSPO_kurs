@@ -8,6 +8,8 @@ void swap(int &a, int &b) {
 
 void selectionSort(int* A, int n) {
 	std::cout << "Started selectionSort \n";
+	int i = 0;
+	double start = omp_get_wtime();
 	int comparisons = 0;
 	for (int j = 0; j < n - 1; j++) {
 		int smallest = j;
@@ -24,4 +26,8 @@ void selectionSort(int* A, int n) {
 
 		swap(A[j], A[smallest]);
 	}
+
+	double end = omp_get_wtime();
+	std::cout << "Numbers sorted: " << n << "\n";
+	std::cout << std::fixed << "Time: " << (end - start) << "\n";
 }
